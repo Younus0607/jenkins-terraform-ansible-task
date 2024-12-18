@@ -5,7 +5,7 @@ provider "aws" {
 resource "aws_instance" "backend" { #ubuntu.yaml NETADATA
   ami                    = "ami-005fc0f236362e99f"
   instance_type          = "t2.micro" 
-  key_name               = "Ansible"
+  key_name               = "ansible"
   vpc_security_group_ids = ["sg-0105364fb728f4536"]
   tags = {
     Name = "u21.local"
@@ -25,7 +25,7 @@ EOF
 resource "aws_instance" "frontend" { #amazon-playbook.yaml NGINX
   ami                    = "ami-05c13eab67c5d8861"
   instance_type          = "t2.micro"
-  key_name               = "Ansible"
+  key_name               = "ansible"
   vpc_security_group_ids = ["sg-0105364fb728f4536"]
   tags = {
     Name = "c8.local"
