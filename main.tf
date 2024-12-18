@@ -1,6 +1,10 @@
 provider "aws" {
   region = "us-east-1"
 }
+environment {
+        AWS_ACCESS_KEY_ID = credentials('aws') // ID from Jenkins credentials store
+        AWS_SECRET_ACCESS_KEY = credentials('aws') // ID from Jenkins credentials store
+     }
 
 resource "aws_instance" "backend" { #ubuntu.yaml NETADATA
   ami                    = "ami-005fc0f236362e99f"
